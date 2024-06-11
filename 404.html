@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 Not Found</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+
+    h1 {
+        font-size: 50px;
+        color: white;
+        position: absolute;
+        animation: moveText 5s infinite;
+    }
+
+    @keyframes moveText {
+        0% {top: 0; left: 0;}
+        25% {top: 0; right: 0;}
+        50% {bottom: 0; right: 0;}
+        75% {bottom: 0; left: 0;}
+        100% {top: 0; left: 0;}
+    }
+</style>
+</head>
+<body>
+    <h1>404 Not Found</h1>
+
+    <script>
+        const text = document.querySelector('h1');
+
+        text.addEventListener('animationiteration', () => {
+            text.style.animation = 'none';
+            setTimeout(() => {
+                text.style.animation = 'moveText 5s infinite';
+            });
+        });
+    </script>
+</body>
+</html>
